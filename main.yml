@@ -134,7 +134,7 @@ Resources:
                 Repo: !Ref GitHubRepo
                 Branch: !Ref GitHubBranch
                 OAuthToken: !Ref GitHubPersonalAccessToken
-                PollForSourceChanges: false 
+                PollForSourceChanges: false
               RunOrder: 1
         - Name: Build
           Actions:
@@ -285,7 +285,7 @@ Resources:
             --filters "Name=resource-id,Values=${!INSTANCE_ID}" \
             "Name=key,Values=aws:cloudformation:logical-id" \
             | jq -r ".Tags[0].Value"`
-            
+
             # Signal to CloudFormation that the instance is ready
             /opt/aws/bin/cfn-signal -e $? --stack ${AWS::StackName} --region ${AWS::Region} --resource ${!LOGICAL_ID}
 
