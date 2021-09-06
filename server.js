@@ -1,8 +1,10 @@
 const { hostname } = require('os');
+const http = require('http');
 const https = require('https');
 const fs = require('fs');
 
 const STACK_NAME = process.env.STACK_NAME || "Unknown Stack";
+const port = 8080
 const httpsPort = 8443;
 const httpsKey = '../keys/key.pem'
 const httpsCert = '../keys/cert.pem'
